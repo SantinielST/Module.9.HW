@@ -4,7 +4,30 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var exceptions = new Exception[] { 
+                new ArgumentException(), 
+                new ArgumentNullException(), 
+                new IndexOutOfRangeException(), 
+                new FormatException(),
+                new InsertValueException("Value is not correct! Please try again!")
+            };
+
+            foreach (var exception in exceptions)
+            {
+                try
+                {
+                    throw exception;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    Console.WriteLine(exception.GetType().FullName);
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
