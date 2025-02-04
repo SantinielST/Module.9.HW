@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            var exceptions = new Exception[] { 
+            var exceptions = new Exception[] 
+            { 
                 new ArgumentException(), 
                 new ArgumentNullException(), 
                 new IndexOutOfRangeException(), 
